@@ -2,7 +2,8 @@
   'use strict';
 
   /* ── i18n ───────────────────────────────────────────────── */
-  var lang = localStorage.getItem('wadil_lang') || 'es';
+  var stored = localStorage.getItem('wadil_lang');
+  var lang = stored || (navigator.language && navigator.language.startsWith('es') ? 'es' : 'en');
 
   function getKey(obj, path) {
     return path.split('.').reduce(function (o, k) { return o && o[k]; }, obj);
