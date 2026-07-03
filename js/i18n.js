@@ -2,6 +2,7 @@ const WADIL_I18N = {
   es: {
     meta: {
       title: 'Wadil AI Studio — Reinventa tu empresa con IA',
+      description: 'Consultoría de IA nearshore para México y Latinoamérica. Diagnóstico de brechas en 2 semanas, roadmap priorizado y adopción real. Con método, no experimentos.',
     },
     nav: {
       logo_aria:  'Wadil AI Studio — inicio',
@@ -155,6 +156,7 @@ const WADIL_I18N = {
   en: {
     meta: {
       title: 'Wadil AI Studio — Reinvent your company with AI',
+      description: 'AI nearshore consulting for Mexico & Latin America. 2-week performance gap diagnostic, prioritized AI roadmap, and real adoption. With method, not experiments.',
     },
     nav: {
       logo_aria:  'Wadil AI Studio — home',

@@ -17,6 +17,15 @@
     document.documentElement.lang = l;
     document.title = t.meta.title;
 
+    var sel = function (s) { return document.querySelector(s); };
+    var setMeta = function (s, v) { var el = sel(s); if (el && v) el.setAttribute('content', v); };
+    setMeta('meta[name="description"]', t.meta.description);
+    setMeta('meta[property="og:title"]', t.meta.title);
+    setMeta('meta[property="og:description"]', t.meta.description);
+    setMeta('meta[property="og:locale"]', l === 'es' ? 'es_MX' : 'en_US');
+    setMeta('meta[name="twitter:title"]', t.meta.title);
+    setMeta('meta[name="twitter:description"]', t.meta.description);
+
     document.querySelectorAll('[data-i18n]').forEach(function (el) {
       var val = getKey(t, el.dataset.i18n);
       if (val !== undefined) el.textContent = val;
