@@ -33,30 +33,27 @@
     var t = WADIL_I18N[l] || WADIL_I18N.es;
     grid.innerHTML = '';
 
-    WADIL_VIDEOS.forEach(function (v) {
+    WADIL_VIDEOS.forEach(function (v, i) {
       var card = document.createElement('article');
-      card.className = 'video-card';
+      card.className = 'video-card reveal';
+      if (i > 0) card.setAttribute('data-d', String(i));
 
-      var thumb = document.createElement('button');
-      thumb.type = 'button';
+      var thumb = document.createElement('div');
       thumb.className = 'video-card__thumb';
-      thumb.setAttribute('aria-label', t.insights.aria_play_prefix + ' ' + v.title);
       var formatIco = WADIL_FORMAT_ICONS[v.format] || '';
-      thumb.innerHTML =
-        '<span class="video-card__format">' + formatIco + '<span>' + v.format + '</span></span>' +
-        '<img src="https://i.ytimg.com/vi/' + v.id + '/hqdefault.jpg" alt="" loading="lazy">' +
-        '<span class="video-card__play">' +
-          '<svg width="68" height="48" viewBox="0 0 68 48" fill="none"><path fill="#EE1B1B" d="M66.5 7.7c-.8-3-2.9-5.3-5.7-6.1C55.8 0 34 0 34 0S12.2 0 7.2 1.6C4.4 2.4 2.3 4.7 1.5 7.7 0 13 0 24 0 24s0 11 1.5 16.3c.8 3 2.9 5.2 5.7 6C12.2 48 34 48 34 48s21.8 0 26.8-1.6c2.8-.8 4.9-3 5.7-6C68 35 68 24 68 24s0-11-1.5-16.3z"/><path fill="#fff" d="M45 24 27 14v20z"/></svg>' +
-        '</span>';
 
-      thumb.addEventListener('click', function () {
-        var iframe = document.createElement('iframe');
-        iframe.src = 'https://www.youtube.com/embed/' + v.id + '?autoplay=1';
-        iframe.title = v.title;
-        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-        iframe.allowFullscreen = true;
-        thumb.replaceWith(iframe);
-      });
+      var play = document.createElement('button');
+      play.type = 'button';
+      play.className = 'video-card__play';
+      play.setAttribute('aria-label', t.insights.aria_play_prefix + ' ' + v.title);
+      play.setAttribute('data-video-id', v.id);
+      play.setAttribute('data-video-title', v.title);
+      play.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg>';
+
+      thumb.innerHTML =
+        '<img src="https://i.ytimg.com/vi/' + v.id + '/hqdefault.jpg" alt="" loading="lazy">' +
+        '<span class="video-card__format">' + formatIco + '<span>' + v.format + '</span></span>';
+      thumb.appendChild(play);
 
       var h4 = document.createElement('h4');
       h4.textContent = v.title;
@@ -67,6 +64,53 @@
       card.appendChild(h4);
       card.appendChild(p);
       grid.appendChild(card);
+    });
+  }
+
+  /* ── Video modal (opens on .video-card__play click, ready to embed the real player
+     once WADIL_VIDEOS has real YouTube IDs) ────────────────────────────────────── */
+  var videoModalPlaceholder = '<svg width="30" height="30" viewBox="0 0 24 24" fill="rgba(255,255,255,.7)"><path d="M8 5v14l11-7z"></path></svg>';
+
+  function setupVideoModal() {
+    var modal = document.getElementById('videoModal');
+    if (!modal) return;
+    var frame = document.getElementById('videoModalFrame');
+    var titleEl = modal.querySelector('.video-modal__title');
+
+    var open = function (id, title) {
+      titleEl.textContent = title || '';
+      frame.innerHTML = '<iframe src="https://www.youtube.com/embed/' + id + '" title="' + title + '" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+    };
+    var close = function () {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      frame.innerHTML = videoModalPlaceholder;
+    };
+
+    document.addEventListener('click', function (e) {
+      var playBtn = e.target.closest('.video-card__play');
+      if (playBtn) { open(playBtn.getAttribute('data-video-id'), playBtn.getAttribute('data-video-title')); return; }
+      if (e.target.closest('[data-video-close]')) close();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && modal.classList.contains('is-open')) close();
+    });
+  }
+
+  /* ── FAQ accordion (exclusive open, no third-party library) ─────────────────── */
+  function setupFaq() {
+    document.querySelectorAll('.faq__q').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var item = btn.closest('.faq__item');
+        var wasOpen = item.classList.contains('is-open');
+        item.parentElement.querySelectorAll('.faq__item.is-open').forEach(function (o) {
+          if (o !== item) { o.classList.remove('is-open'); o.querySelector('.faq__q').setAttribute('aria-expanded', 'false'); }
+        });
+        item.classList.toggle('is-open', !wasOpen);
+        btn.setAttribute('aria-expanded', String(!wasOpen));
+      });
     });
   }
 
@@ -153,6 +197,9 @@
         applyLang(lang === 'es' ? 'en' : 'es');
       });
     }
+
+    setupVideoModal();
+    setupFaq();
   }
 
   if (document.readyState !== 'loading') {

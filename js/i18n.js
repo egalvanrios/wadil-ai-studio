@@ -151,6 +151,7 @@ const WADIL_I18N = {
       view_channel:     'Ver canal completo',
       cta_more:         'Ver más en YouTube',
       aria_play_prefix: 'Reproducir:',
+      modal_close_aria: 'Cerrar',
     },
     faq: {
       eyebrow: 'Preguntas frecuentes',
@@ -352,6 +353,7 @@ const WADIL_I18N = {
       view_channel:     'View full channel',
       cta_more:         'See more on YouTube',
       aria_play_prefix: 'Play:',
+      modal_close_aria: 'Close',
     },
     faq: {
       eyebrow: 'Frequently asked questions',
