@@ -34,10 +34,7 @@
       thumb.setAttribute('aria-label', t.insights.aria_play_prefix + ' ' + v.title);
       thumb.innerHTML =
         '<span class="video-card__format">' + v.format + '</span>' +
-        /* hqdefault.jpg 404s to a generic 120x90 gray JPEG for placeholder IDs (still loads fine,
-           just tiny) — drop it on error or on that known placeholder size so the CSS gradient shows. */
-        '<img src="https://i.ytimg.com/vi/' + v.id + '/hqdefault.jpg" alt="" loading="lazy" ' +
-          'onerror="this.remove()" onload="if(this.naturalWidth<=120)this.remove()">' +
+        '<img src="https://i.ytimg.com/vi/' + v.id + '/hqdefault.jpg" alt="" loading="lazy">' +
         '<span class="video-card__play">' +
           '<svg viewBox="0 0 68 48"><path fill="#EE1B1B" d="M66.5 7.7c-.8-3-2.9-5.3-5.7-6.1C55.8 0 34 0 34 0S12.2 0 7.2 1.6C4.4 2.4 2.3 4.7 1.5 7.7 0 13 0 24 0 24s0 11 1.5 16.3c.8 3 2.9 5.2 5.7 6C12.2 48 34 48 34 48s21.8 0 26.8-1.6c2.8-.8 4.9-3 5.7-6C68 35 68 24 68 24s0-11-1.5-16.3z"/><path fill="#fff" d="M45 24 27 14v20z"/></svg>' +
         '</span>';
