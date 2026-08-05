@@ -9,15 +9,28 @@
     return path.split('.').reduce(function (o, k) { return o && o[k]; }, obj);
   }
 
-  /* ── Insights en video — grid curado a mano (ver drafts/wadil-vlog-recomendacion.md) ──
-     Reemplaza estos IDs por videos reales del canal antes de publicar.
-     "id" es lo que va después de "v=" o "shorts/" en la URL de YouTube. */
-  var WADIL_VIDEOS = [
-    { id: 'VIDEO_ID_1', format: 'Short', title: 'Título del video 1', desc: 'Descripción breve o dimensión que aborda.' },
-    { id: 'VIDEO_ID_2', format: 'Video', title: 'Título del video 2', desc: 'Descripción breve o dimensión que aborda.' },
-    { id: 'VIDEO_ID_3', format: 'Short', title: 'Título del video 3', desc: 'Descripción breve o dimensión que aborda.' },
-    { id: 'VIDEO_ID_4', format: 'Video', title: 'Título del video 4', desc: 'Descripción breve o dimensión que aborda.' }
-  ];
+  /* Set once scroll-reveal is wired up in setup(); lets renderVideos() hook
+     re-created cards (on lang switch) into the same observer instead of
+     staying stuck at opacity:0 forever. */
+  var observeReveal = null;
+
+  /* ── Insights en video — grid curado a mano ── "id" es lo que va después de
+     "v=" o "shorts/" en la URL de YouTube. Thumbnail se jala automático de
+     i.ytimg.com con ese id, no requiere imagen aparte. */
+  var WADIL_VIDEOS = {
+    es: [
+      { id: '_NGWShjASvk', format: 'Video', title: 'Presentación Wadil AI Studio', desc: 'Conoce qué es Wadil AI Studio y cómo podemos ayudarte.' },
+      { id: '0T5WuN8cL-Y', format: 'Short', title: 'La Experiencia Aplicada Cambia Todo', desc: 'Según BCG, el 70% del retorno de inversión de una implementación con IA depende de cambiar procesos y capacitar a la gente. Nosotros alineamos tecnología, diseño de usuario y preparación humana desde el principio.' },
+      { id: '7fe_nceDsN8', format: 'Short', title: 'Herramientas de IA Subutilizadas', desc: 'En muchas PyMEs utilizan la IA únicamente para el diseño visual, pero aún vemos equipos que están saturados con análisis de datos manuales. La forma de cerrar esta brecha es con capacitación personalizada y enfocada en casos reales.' },
+      { id: 'C7aSagToe48', format: 'Video', title: 'La Solución al Desorden de Datos para Implementar IA', desc: 'El éxito de la IA no depende solo del algoritmo, sino del orden de tu información interna, podemos ayudarte a implementar la estrategia de transformación de datos.' }
+    ],
+    en: [
+      { id: '_NGWShjASvk', format: 'Video', title: 'Wadil AI Studio Introduction', desc: 'Learn what Wadil AI Studio is and how we can help you.' },
+      { id: '0T5WuN8cL-Y', format: 'Short', title: 'Applied Experience Changes Everything', desc: 'According to BCG, 70% of the ROI from an AI implementation depends on changing processes and training people. We align technology, user experience design, and human readiness from day one.' },
+      { id: '7fe_nceDsN8', format: 'Short', title: 'Underutilized AI Tools', desc: 'Many SMBs use AI only for visual design, yet we still see teams overwhelmed by manual data analysis. Closing that gap takes personalized training focused on real use cases.' },
+      { id: 'C7aSagToe48', format: 'Video', title: 'The Fix for Data Chaos Before Implementing AI', desc: "AI success doesn't depend only on the algorithm — it depends on the order of your internal data. We can help you implement a data transformation strategy." }
+    ]
+  };
 
   /* Format icon markup — inline width/height + stroke/fill on the <svg> tag itself
      (not only in CSS) so a missing/broken stylesheet can never blow these up to
@@ -31,9 +44,10 @@
     var grid = document.getElementById('videosGrid');
     if (!grid) return;
     var t = WADIL_I18N[l] || WADIL_I18N.es;
+    var videos = WADIL_VIDEOS[l] || WADIL_VIDEOS.es;
     grid.innerHTML = '';
 
-    WADIL_VIDEOS.forEach(function (v, i) {
+    videos.forEach(function (v, i) {
       var card = document.createElement('article');
       card.className = 'video-card reveal';
       if (i > 0) card.setAttribute('data-d', String(i));
@@ -64,6 +78,7 @@
       card.appendChild(h4);
       card.appendChild(p);
       grid.appendChild(card);
+      if (observeReveal) observeReveal(card);
     });
   }
 
@@ -167,14 +182,16 @@
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var reveals = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
     if (reduce || !('IntersectionObserver' in window)) {
-      reveals.forEach(function (el) { el.classList.add('in'); });
+      observeReveal = function (el) { el.classList.add('in'); };
+      reveals.forEach(observeReveal);
     } else {
       var io = new IntersectionObserver(function (entries) {
         entries.forEach(function (en) {
           if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
         });
       }, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
-      reveals.forEach(function (el) { io.observe(el); });
+      observeReveal = function (el) { io.observe(el); };
+      reveals.forEach(observeReveal);
     }
 
     // Smooth anchor scroll with sticky-header offset
