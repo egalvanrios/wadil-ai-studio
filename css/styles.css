@@ -277,7 +277,15 @@ button  { font-family: inherit; }
   background-size: 64px 64px;
   mask-image: radial-gradient(120% 100% at 50% 0%, #000 35%, transparent 78%);
   -webkit-mask-image: radial-gradient(120% 100% at 50% 0%, #000 35%, transparent 78%);
+  transition: opacity .3s ease;
 }
+.hero--vanta .hero__grid-lines { opacity: 0; }
+.hero canvas { position: absolute; inset: 0; z-index: 0; }
+.hero__tint {
+  position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: rgba(11, 26, 51, .35);
+}
+.hero > .wrap { position: relative; z-index: 2; }
 .hero__inner {
   position: relative;
   padding: clamp(72px, 11vw, 150px) 0 clamp(64px, 8vw, 110px);
