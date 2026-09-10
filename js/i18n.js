@@ -204,10 +204,10 @@ const WADIL_I18N = {
       m1_quote: '"El poder se otorga por el puesto; la autoridad se gana todos los días."',
       m2_initials: 'EG', m2_name: 'Eric Galván', m2_role: 'UX EMPRESARIAL',
       m2_bio: '+900 practicantes formados en AT&T, Motorola, Banorte, MetLife, IBM y Deloitte Digital. Coach certificado de IBM Enterprise Design Thinking. Facilita Reto.',
-      m3_initials: 'J', m3_name: 'Jessica', m3_role: 'GESTIÓN DEL CAMBIO',
-      m3_bio: 'Dueña de la Fase 4 (Activación del equipo) y Fase 5 (Mejora continua) del Ciclo de Excelencia — donde la adopción se vuelve hábito.',
-      m4_initials: 'V', m4_name: 'Víctor', m4_role: 'INGENIERÍA IA-NATIVA',
-      m4_bio: 'Dueño de la Fase 3 (Implementación) del Ciclo de Excelencia — donde el roadmap se convierte en sistemas que funcionan.',
+      m3_initials: 'JG', m3_name: 'Jessica Galván', m3_role: 'GESTIÓN DEL CAMBIO',
+      m3_bio: 'Casi 20 años en RH, Administración y Planeación Estratégica — Electrolux, Solectron, Accel. Dueña de la Fase 4 (Activación del equipo) y Fase 5 (Mejora continua) del Ciclo de Excelencia — donde la adopción se vuelve hábito.',
+      m4_initials: 'VR', m4_name: 'Víctor Ruiz', m4_role: 'INGENIERÍA IA-NATIVA',
+      m4_bio: 'Lic. en Informática, graduado con honores — desarrollo de sistemas y administración de servidores en Wadil Works desde 2009, hoy supervisando las operaciones. Dueño de la Fase 3 (Implementación) del Ciclo de Excelencia — donde el roadmap se convierte en sistemas que funcionan.',
     },
     talleres: {
       meta: {
@@ -528,10 +528,10 @@ const WADIL_I18N = {
       m1_quote: '"Power is granted by the title; authority is earned every day."',
       m2_initials: 'EG', m2_name: 'Eric Galván', m2_role: 'ENTERPRISE UX',
       m2_bio: '900+ practitioners trained at AT&T, Motorola, Banorte, MetLife, IBM, and Deloitte Digital. Certified IBM Enterprise Design Thinking coach. Facilitates Challenge.',
-      m3_initials: 'J', m3_name: 'Jessica', m3_role: 'CHANGE MANAGEMENT',
-      m3_bio: 'Owns Phase 4 (Team Activation) and Phase 5 (Continuous Improvement) of the Excellence Cycle — where adoption becomes habit.',
-      m4_initials: 'V', m4_name: 'Víctor', m4_role: 'AI-NATIVE ENGINEERING',
-      m4_bio: 'Owns Phase 3 (Implementation) of the Excellence Cycle — where the roadmap becomes systems that work.',
+      m3_initials: 'JG', m3_name: 'Jessica Galván', m3_role: 'CHANGE MANAGEMENT',
+      m3_bio: 'Nearly 20 years in HR, Administration, and Strategic Planning — Electrolux, Solectron, Accel. Owns Phase 4 (Team Activation) and Phase 5 (Continuous Improvement) of the Excellence Cycle — where adoption becomes habit.',
+      m4_initials: 'VR', m4_name: 'Víctor Ruiz', m4_role: 'AI-NATIVE ENGINEERING',
+      m4_bio: "Computer Science degree, graduated with honors — building systems and administering servers at Wadil Works since 2009, now overseeing operations. Owns Phase 3 (Implementation) of the Excellence Cycle — where the roadmap becomes systems that work.",
     },
     talleres: {
       meta: {
