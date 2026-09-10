@@ -680,20 +680,22 @@ button  { font-family: inherit; }
 .workshop-teaser { background: var(--wad-bg-elevated); border: 1px solid var(--wad-border-subtle); border-radius: var(--wad-radius-2xl); overflow: hidden; display: flex; flex-direction: column; }
 .workshop-teaser__stripe { height: 4px; background: var(--pillar); }
 .workshop-teaser__body { padding: 28px; display: flex; flex-direction: column; gap: 16px; }
-.workshop-teaser__pillar { display: flex; align-items: center; gap: 8px; }
-.workshop-teaser__pillar .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--pillar); }
+.workshop-teaser__pillar { display: flex; align-items: center; gap: 10px; }
+.workshop-teaser__badge { width: 34px; height: 34px; border-radius: 50%; background: var(--pillar); flex: none; }
+.workshop-teaser__pillar .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--pillar); flex: none; }
 .workshop-teaser__pillar span { font-family: var(--wad-font-display); font-weight: 600; font-size: 13px; letter-spacing: .13em; color: var(--pillar); }
 .workshop-teaser__title { margin: 0; font-family: var(--wad-font-display); font-weight: 700; font-size: 24px; line-height: 1.25; letter-spacing: -.01em; color: var(--wad-ink-800); }
-.workshop-teaser__facilitator { margin: 0; font-size: 14px; font-weight: 600; color: var(--wad-ink-400); }
 .workshop-teaser__promise { margin: 0; font-size: 15px; line-height: 1.53; color: var(--wad-ink-600); }
 .workshop-teaser__divider { border: 0; border-top: 1px solid var(--wad-border-subtle); margin: 0; }
 .workshop-teaser__meta { margin: 0; font-size: 14px; line-height: 1.5; color: var(--wad-ink-400); }
 .workshop-teaser__pricing-label { margin: 0 0 8px; font-family: var(--wad-font-display); font-weight: 600; font-size: 11px; letter-spacing: .11em; color: var(--wad-slate-700); }
 .workshop-teaser__tier { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 14px; }
 .workshop-teaser__tier + .workshop-teaser__tier { margin-top: 6px; }
+.workshop-teaser__tier-header { display: flex; align-items: center; gap: 8px; }
 .workshop-teaser__tier-name { color: var(--wad-ink-600); }
 .workshop-teaser__tier-price { font-weight: 600; color: var(--wad-ink-800); }
 .workshop-teaser__tier-price--sm { font-size: 10px; }
+.workshop-teaser__recommended { background: var(--accent); color: #fff; font-family: var(--wad-font-display); font-weight: 600; font-size: 9.5px; letter-spacing: .06em; padding: 3px 8px; border-radius: 20px; white-space: nowrap; }
 .workshop-teaser__fine { margin: 0; font-size: 12.5px; line-height: 1.44; color: var(--wad-slate-700); }
 
 /* ── Equipo (home #equipo) ── */
