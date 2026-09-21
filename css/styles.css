@@ -254,7 +254,7 @@ button  { font-family: inherit; }
 .nav.is-open { display: flex; }
 .nav a {
   font-family: var(--wad-font-display); font-weight: 600; font-size: 15px;
-  color: var(--wad-ink-600); position: relative; padding: 14px 24px; text-align: right;
+  color: var(--wad-ink-600); position: relative; padding: 14px 24px; text-align: center;
 }
 .nav a::after { display: none; }
 .nav a:hover              { color: var(--wad-ink-800); }
