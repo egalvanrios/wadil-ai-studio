@@ -703,6 +703,44 @@ button  { font-family: inherit; }
 .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 .team-grid .team-bio { margin: 0; width: auto; }
 
+/* ── Comunicación interna (home #comunicacion) ── */
+.ci-chips {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+  margin-top: clamp(28px, 3.5vw, 40px);
+}
+.ci-chip {
+  font-family: var(--wad-font-display); font-weight: 700;
+  font-size: 13.5px; color: var(--wad-navy-600); background: var(--wad-navy-050);
+  border: 1px solid color-mix(in srgb, var(--wad-navy-200) 45%, transparent);
+  padding: 9px 16px; border-radius: var(--wad-radius-pill);
+}
+
+/* ── Comunicación interna (page — Reto / Ejecución omnicanal) ── */
+.ci-challenges { background: var(--wad-bg); }
+.ci-challenges__grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+  margin-top: clamp(32px, 4vw, 48px);
+}
+.ci-touch { background: var(--wad-bg-soft); }
+.ci-touch__grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 4vw, 56px);
+  margin-top: clamp(32px, 4vw, 48px);
+}
+.ci-touch__label {
+  display: block; font-family: var(--wad-font-display); font-weight: 700;
+  font-size: 13px; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--wad-navy-400); margin-bottom: 18px;
+}
+.ci-touch__list { display: grid; gap: 16px; margin: 0; padding: 0; list-style: none; }
+.ci-touch__item { display: grid; grid-template-columns: 24px 1fr; gap: 14px; align-items: start; }
+.ci-touch__item .chk {
+  width: 24px; height: 24px; border-radius: 50%; background: var(--wad-navy-050);
+  display: grid; place-items: center;
+}
+.ci-touch__item .chk svg { width: 13px; height: 13px; stroke: var(--wad-navy-600); stroke-width: 2.4; fill: none; }
+.ci-touch__item h5 { margin: 0 0 3px; font-family: var(--wad-font-display); font-weight: 700; font-size: 15px; color: var(--wad-ink-800); }
+.ci-touch__item p { margin: 0; font-size: 13.5px; line-height: 1.5; color: var(--wad-ink-400); }
+
 /* ── Scroll reveal ── */
 @media (prefers-reduced-motion: no-preference) {
   .reveal      { opacity: 0; transform: translateY(24px); transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
@@ -732,6 +770,8 @@ button  { font-family: inherit; }
   .workshops-grid { grid-template-columns: repeat(2, 1fr); }
   .talleres__grid { grid-template-columns: repeat(2, 1fr); }
   .team-grid      { grid-template-columns: repeat(2, 1fr); }
+  .ci-challenges__grid { grid-template-columns: 1fr; }
+  .ci-touch__grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 720px) {
   .nav, .header__cta .btn--text { display: none; }
