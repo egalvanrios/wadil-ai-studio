@@ -224,12 +224,12 @@ const WADIL_I18N = {
     comunicacion_interna: {
       meta: {
         title: 'Comunicación Interna y Cultura — Wadil AI Studio',
-        description: 'Comunicación interna y cultura para empresas transnacionales, con el mismo método de excelencia de Wadil, potenciado con IA.',
+        description: 'Comunicación interna y cultura para empresas, con el mismo método de excelencia de Wadil, potenciado con IA.',
       },
       hero: {
         eyebrow: 'Comunicación interna y cultura',
         title:   'Comunicación interna, <span class="accent">reinventada con IA.</span>',
-        sub:     'Es uno de los servicios con los que empezamos: apoyar a empresas transnacionales con la estrategia, planeación y ejecución de su comunicación interna. Hoy aplicamos el mismo método de excelencia que usamos en el resto de Wadil, potenciado con IA.',
+        sub:     'Es uno de los servicios con los que empezamos: apoyar a empresas con la estrategia, planeación y ejecución de su comunicación interna. Hoy aplicamos el mismo método de excelencia que usamos en el resto de Wadil, potenciado con IA.',
         cta_primary:   'Realiza tu pre-diagnóstico',
         cta_secondary: 'Contáctanos',
       },
@@ -283,7 +283,7 @@ const WADIL_I18N = {
         eyebrow: 'Por qué Wadil para esto',
         title:   'No es una capacidad nueva — es de donde venimos.',
         item1_title: 'No es nuestra primera vez',
-        item1_body:  'Apoyamos a áreas de RH de empresas transnacionales con su comunicación interna completa: estrategia, planeación y ejecución, adaptando el canal a cada organización.',
+        item1_body:  'Apoyamos a áreas de RH con su comunicación interna completa: estrategia, planeación y ejecución, adaptando el canal a cada organización.',
         item2_title: 'Mismo equipo de 4 disciplinas',
         item2_body:  'Credibilidad ejecutiva, UX empresarial, gestión del cambio e ingeniería IA-nativa, integrados.',
         item3_title: 'Entrega flexible',
@@ -639,12 +639,12 @@ const WADIL_I18N = {
     comunicacion_interna: {
       meta: {
         title: 'Internal Communication and Cultural Alignment — Wadil AI Studio',
-        description: 'Internal communication and cultural alignment for multinational companies, using Wadil\'s same excellence method, powered by AI.',
+        description: 'Internal communication and cultural alignment for companies, using Wadil\'s same excellence method, powered by AI.',
       },
       hero: {
         eyebrow: 'Internal communication and cultural alignment',
         title:   'Internal communication, <span class="accent">reinvented with AI.</span>',
-        sub:     'It\'s one of the services we started with: supporting multinational companies with the strategy, planning, and execution of their internal communication. Today we apply the same excellence method we use across Wadil, powered by AI.',
+        sub:     'It\'s one of the services we started with: supporting companies with the strategy, planning, and execution of their internal communication. Today we apply the same excellence method we use across Wadil, powered by AI.',
         cta_primary:   'Take your pre-assessment',
         cta_secondary: 'Contact us',
       },
@@ -698,7 +698,7 @@ const WADIL_I18N = {
         eyebrow: 'Why Wadil for this',
         title:   'This isn\'t a new capability — it\'s where we come from.',
         item1_title: 'This isn\'t our first time',
-        item1_body:  'We\'ve supported HR teams at multinational companies with their full internal communication: strategy, planning, and execution, adapting the channel to each organization.',
+        item1_body:  'We\'ve supported HR teams with their full internal communication: strategy, planning, and execution, adapting the channel to each organization.',
         item2_title: 'The same 4-discipline team',
         item2_body:  'Executive credibility, enterprise UX, change management, and AI-native engineering, integrated.',
         item3_title: 'Flexible delivery',
