@@ -240,15 +240,16 @@ button  { font-family: inherit; }
   transition: border-color .2s ease, background .2s ease;
 }
 .header.is-stuck { border-bottom-color: var(--wad-border-subtle); }
-.header__inner   { display: flex; align-items: center; justify-content: space-between; height: 76px; gap: 24px; }
+.header__inner   { display: flex; align-items: center; justify-content: space-between; height: 76px; gap: 24px; position: relative; }
 .header__logo    { display: flex; align-items: center; flex-shrink: 0; }
 .header__logo img { height: 30px; width: auto; }
 
 .nav {
-  display: none; position: absolute; top: 76px; left: 0; right: 0;
-  flex-direction: column; align-items: stretch; gap: 0; margin: 0;
-  background: var(--wad-bg-elevated); border-top: 1px solid var(--wad-border-subtle);
-  box-shadow: var(--wad-shadow-lg); padding: 8px 0 12px;
+  display: none; position: absolute; top: calc(100% + 1px); right: 24px; left: auto;
+  flex-direction: column; align-items: stretch; gap: 0; margin: 0; min-width: 240px;
+  max-width: calc(100vw - 48px);
+  background: var(--wad-bg-elevated); border: 1px solid var(--wad-border-subtle);
+  border-radius: var(--wad-radius-md); box-shadow: var(--wad-shadow-lg); padding: 8px 0 12px;
 }
 .nav.is-open { display: flex; }
 .nav a {
@@ -258,14 +259,15 @@ button  { font-family: inherit; }
 .nav a::after { display: none; }
 .nav a:hover              { color: var(--wad-ink-800); }
 
-.header__cta     { display: flex; align-items: center; gap: 16px; flex-shrink: 0; }
+.header__cta     { display: flex; align-items: center; gap: 16px; flex-shrink: 0; justify-content: flex-end; }
 .header__cta .btn { height: 44px; padding: 0 20px; font-size: 15px; }
 .menu-btn {
-  display: inline-flex; align-items: center; justify-content: center;
-  width: 44px; height: 44px; flex-shrink: 0; border: 1px solid var(--wad-border-subtle);
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  height: 44px; padding: 0 18px; flex-shrink: 0; border: 1px solid var(--wad-border-subtle);
   border-radius: var(--wad-radius-md); background: var(--wad-bg-elevated); cursor: pointer;
+  font-family: var(--wad-font-display); font-weight: 600; font-size: 15px; color: var(--wad-ink-800);
 }
-.menu-btn svg { width: 22px; height: 22px; stroke: var(--wad-ink-800); }
+.menu-btn svg { width: 20px; height: 20px; stroke: var(--wad-ink-800); flex-shrink: 0; }
 
 /* ── Hero (variant A — centered) ── */
 .hero     { position: relative; overflow: hidden; }

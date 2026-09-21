@@ -16,6 +16,7 @@ const WADIL_I18N = {
       faq:        'FAQ',
       cta:        'Pre-diagnóstico',
       lang_label: 'EN',
+      menu_label: 'Menú',
     },
     hero: {
       eyebrow:    'CONSULTORÍA NEARSHORE · MÉXICO · LATINOAMÉRICA',
@@ -430,6 +431,7 @@ const WADIL_I18N = {
       faq:        'FAQ',
       cta:        'Pre-diagnostic',
       lang_label: 'ES',
+      menu_label: 'Menu',
     },
     hero: {
       eyebrow:    'NEARSHORE CONSULTING · MEXICO · LATIN AMERICA',
