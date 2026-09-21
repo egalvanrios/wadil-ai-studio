@@ -783,7 +783,9 @@ button  { font-family: inherit; }
   .ci-touch__grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 720px) {
-  .header__cta .btn--text { display: none; }
+  .header__cta .btn--text, .header__cta .btn--red { display: none; }
+  .header__cta { gap: 10px; }
+  .header__inner { gap: 12px; }
   .fw__grid, .diff__grid { grid-template-columns: 1fr; }
   .cycle__grid   { grid-template-columns: 1fr; }
   .problem__grid { grid-template-columns: 1fr; }
