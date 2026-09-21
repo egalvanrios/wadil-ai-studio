@@ -409,6 +409,28 @@
       });
     }
 
+    // Mobile nav (hamburger)
+    var menuBtn = document.querySelector('.menu-btn');
+    var nav = document.querySelector('.nav');
+    if (menuBtn && nav) {
+      var closeNav = function () {
+        nav.classList.remove('is-open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      };
+      menuBtn.addEventListener('click', function () {
+        var open = nav.classList.toggle('is-open');
+        menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      nav.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', closeNav);
+      });
+      document.addEventListener('click', function (e) {
+        if (!nav.classList.contains('is-open')) return;
+        if (nav.contains(e.target) || menuBtn.contains(e.target)) return;
+        closeNav();
+      });
+    }
+
     setupVideoModal();
     setupCaseModal();
     setupFaq();

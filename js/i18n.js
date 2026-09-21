@@ -14,7 +14,7 @@ const WADIL_I18N = {
       talleres:   'Talleres',
       ci:         'Comunicación Interna',
       faq:        'FAQ',
-      cta:        'Realiza tu pre-diagnóstico',
+      cta:        'Pre-diagnóstico',
       lang_label: 'EN',
     },
     hero: {
@@ -428,7 +428,7 @@ const WADIL_I18N = {
       talleres:   'Workshops',
       ci:         'Internal Communication',
       faq:        'FAQ',
-      cta:        'Take your pre-diagnostic',
+      cta:        'Pre-diagnostic',
       lang_label: 'ES',
     },
     hero: {
