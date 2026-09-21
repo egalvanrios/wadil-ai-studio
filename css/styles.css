@@ -785,6 +785,10 @@ button  { font-family: inherit; }
 @media (max-width: 720px) {
   .header__cta .btn--text, .header__cta .btn--red { display: none; }
   .header__cta { gap: 10px; }
+  .header__cta .btn, .header__cta .menu-btn { height: 36px; padding: 0 12px; font-size: 13px; }
+  .header__cta .menu-btn { gap: 6px; }
+  .header__cta .menu-btn svg { width: 16px; height: 16px; }
+  .header__logo img { height: 26px; }
   .header__inner { gap: 12px; }
   .fw__grid, .diff__grid { grid-template-columns: 1fr; }
   .cycle__grid   { grid-template-columns: 1fr; }
