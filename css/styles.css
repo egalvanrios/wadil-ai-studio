@@ -715,6 +715,11 @@ button  { font-family: inherit; }
   display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
   margin-top: clamp(28px, 3.5vw, 40px);
 }
+.ci-home { background: var(--wad-navy-900); color: #fff; }
+.ci-home .eyebrow { color: var(--wad-navy-200); }
+.ci-home .display { color: #fff; }
+.ci-home .lead    { color: rgba(255,255,255,.72); margin-top: 20px; }
+.ci-home .ci-chip { color: #fff; background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.18); }
 .ci-chip {
   font-family: var(--wad-font-display); font-weight: 700;
   font-size: 13.5px; color: var(--wad-navy-600); background: var(--wad-navy-050);
