@@ -168,7 +168,7 @@ button  { font-family: inherit; }
 .display {
   font-family: var(--wad-font-display); font-weight: 700;
   color: var(--wad-ink-800); letter-spacing: -0.025em;
-  line-height: 1.02; margin: 0; text-wrap: balance;
+  font-size: clamp(28px, 4vw, 40px); line-height: 1.1; margin: 0; text-wrap: balance;
 }
 .lead {
   font-size: clamp(17px, 1.5vw, 20px); line-height: 1.55;
@@ -347,7 +347,6 @@ button  { font-family: inherit; }
 /* ── Problem ── */
 .problem { background: var(--wad-bg); }
 .problem__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(36px, 6vw, 80px); align-items: start; }
-.problem__statement .display { font-size: clamp(28px, 3.6vw, 44px); }
 .problem__quote {
   margin-top: 28px; padding: 22px 24px; border-left: 3px solid var(--wad-red-600);
   background: var(--wad-bg-soft); border-radius: 0 var(--wad-radius-md) var(--wad-radius-md) 0;
@@ -371,7 +370,7 @@ button  { font-family: inherit; }
 .diag__glow   { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(80% 60% at 85% 10%, rgba(52,95,158,.4), transparent 60%); }
 .diag__inner  { position: relative; display: grid; grid-template-columns: .92fr 1.08fr; gap: clamp(36px, 6vw, 80px); align-items: center; }
 .diag .eyebrow { color: var(--wad-navy-200); }
-.diag__title  { font-family: var(--wad-font-display); font-weight: 800; color: #fff; letter-spacing: -.025em; line-height: 1.04; font-size: clamp(30px, 4vw, 50px); margin: 20px 0 0; }
+.diag__title  { font-family: var(--wad-font-display); font-weight: 800; color: #fff; letter-spacing: -.025em; line-height: 1.1; font-size: clamp(28px, 4vw, 40px); margin: 20px 0 0; }
 .diag__sub    { color: rgba(255,255,255,.74); font-size: clamp(16px,1.4vw,19px); line-height: 1.6; margin: 22px 0 0; }
 .diag__points { display: grid; gap: 14px; margin: 28px 0 0; padding: 0; list-style: none; }
 .diag__points li  { display: grid; grid-template-columns: 24px 1fr; gap: 14px; align-items: start; color: rgba(255,255,255,.86); font-size: 15.5px; }
@@ -393,7 +392,6 @@ button  { font-family: inherit; }
 /* ── Framework ── */
 .fw { background: var(--wad-bg-soft); }
 .fw__head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: clamp(36px, 5vw, 56px); }
-.fw__head .display { font-size: clamp(28px, 3.6vw, 46px); }
 .fw__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 
 .dim {
@@ -445,7 +443,7 @@ button  { font-family: inherit; }
 .diff { background: var(--wad-navy-900); color: #fff; }
 .diff__head    { max-width: 760px; margin-bottom: clamp(36px,5vw,56px); }
 .diff__head .eyebrow  { color: var(--wad-navy-200); }
-.diff__head .display  { color: #fff; font-size: clamp(28px,3.8vw,48px); margin-top: 18px; }
+.diff__head .display  { color: #fff; margin-top: 18px; }
 .diff__head .lead     { color: rgba(255,255,255,.72); margin-top: 20px; }
 .diff__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 
@@ -593,7 +591,7 @@ button  { font-family: inherit; }
   border-radius: var(--wad-radius-2xl); color: #fff;
   padding: clamp(40px, 6vw, 80px); text-align: center;
 }
-.cta__panel .display { color: #fff; font-size: clamp(30px,4vw,52px); }
+.cta__panel .display { color: #fff; }
 .cta__panel .lead    { color: rgba(255,255,255,.8); margin: 20px auto 0; max-width: 620px; }
 .cta__actions  { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 36px; }
 .cta__fine     { margin-top: 22px; font-size: 13.5px; color: rgba(255,255,255,.6); }
