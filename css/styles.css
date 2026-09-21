@@ -244,22 +244,24 @@ button  { font-family: inherit; }
 .header__logo    { display: flex; align-items: center; flex-shrink: 0; }
 .header__logo img { height: 30px; width: auto; }
 
-.nav   { display: flex; align-items: center; gap: 34px; }
+.nav {
+  display: none; position: absolute; top: 76px; left: 0; right: 0;
+  flex-direction: column; align-items: stretch; gap: 0; margin: 0;
+  background: var(--wad-bg-elevated); border-top: 1px solid var(--wad-border-subtle);
+  box-shadow: var(--wad-shadow-lg); padding: 8px 0 12px;
+}
+.nav.is-open { display: flex; }
 .nav a {
   font-family: var(--wad-font-display); font-weight: 600; font-size: 15px;
-  color: var(--wad-ink-600); position: relative; padding: 6px 0;
+  color: var(--wad-ink-600); position: relative; padding: 14px 24px;
 }
-.nav a::after {
-  content: ""; position: absolute; left: 0; bottom: 0; height: 2px; width: 0;
-  background: var(--wad-red-600); transition: width .2s ease;
-}
+.nav a::after { display: none; }
 .nav a:hover              { color: var(--wad-ink-800); }
-.nav a:hover::after       { width: 100%; }
 
 .header__cta     { display: flex; align-items: center; gap: 16px; flex-shrink: 0; }
 .header__cta .btn { height: 44px; padding: 0 20px; font-size: 15px; }
 .menu-btn {
-  display: none; align-items: center; justify-content: center;
+  display: inline-flex; align-items: center; justify-content: center;
   width: 44px; height: 44px; flex-shrink: 0; border: 1px solid var(--wad-border-subtle);
   border-radius: var(--wad-radius-md); background: var(--wad-bg-elevated); cursor: pointer;
 }
@@ -780,16 +782,6 @@ button  { font-family: inherit; }
 }
 @media (max-width: 720px) {
   .header__cta .btn--text { display: none; }
-  .menu-btn      { display: inline-flex; }
-  .nav {
-    display: none; position: absolute; top: 76px; left: 0; right: 0;
-    flex-direction: column; align-items: stretch; gap: 0; margin: 0;
-    background: var(--wad-bg-elevated); border-top: 1px solid var(--wad-border-subtle);
-    box-shadow: var(--wad-shadow-lg); padding: 8px 0 12px;
-  }
-  .nav.is-open { display: flex; }
-  .nav a { padding: 14px 24px; }
-  .nav a::after { display: none; }
   .fw__grid, .diff__grid { grid-template-columns: 1fr; }
   .cycle__grid   { grid-template-columns: 1fr; }
   .problem__grid { grid-template-columns: 1fr; }
